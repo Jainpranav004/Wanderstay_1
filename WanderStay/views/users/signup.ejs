@@ -1,0 +1,31 @@
+<% layout("/layout/boilerplate") %>
+
+<div class="row mt-4">
+    <div class = "col-6 offset-3">
+
+        <h2 class = "col-8 offset-3" >SignUp on WanderLust</h2>
+           <form action="/signup" method="POST"  novalidate class="needs-validation">
+  
+                    <div class="mb-3">
+                        <label for="username" class= "form-label" >Username</label>
+                        <input name="username" placeholder="Enter Username" id="username"   type = "text" class="form-control" required>   <!--Required is important for bootstrap to be used-->
+                                <div class="valid-feedback">Username looks good!</div>
+                                <div class="invalid-feedback">Please enter valid Username!</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class= "form-label" >Email</label>
+                        <input name="email" placeholder="Enter Email" type = "email" id="email"  class="form-control" required>   <!--Required is important for bootstrap to be used-->
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class= "form-label" >Password</label>
+                        <input name="password" placeholder="Enter Password" id="password" type = "password" class="form-control" required>   <!--Required is important for bootstrap to be used-->
+                                <div class="valid-feedback">Password looks good!</div>
+                    </div>
+                    <button class="btn btn-success  ">SignUp</button>
+
+           </form>
+
+    </div>
+</div>

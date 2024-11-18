@@ -1,0 +1,62 @@
+<% layout("/layout/boilerplate") %>
+
+<div class="row mt-4">
+<div class = "col-8 offset-2">
+    <br><br>
+    <h3>Create A New Listing</h3>
+    <form method = "POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">  <!--novalidate is a bootstrap class to make browser's validation default messages invalid / Also need-validation classs is required (IMPORTANT)-->
+
+        <!-- ALL CLASSES AND THIS LABEL IS A PART OF BOOTSTTRAP -->
+        <div class="mb-3">
+            <label for="title" class= "form-label" >Title</label>
+            <input name="title" placeholder="Enter Title" type = "text" class="form-control" required>   <!--Required is important for bootstrap to be used-->
+                    <div class="valid-feedback">Title looks good!</div>
+                    <div class="invalid-feedback">Please enter valid Title!</div>
+                     
+        </div>
+
+
+        <div class="mb-3">
+            <label for="description" class= "form-label">Description</label>
+            <textarea name="description" placeholder="Enter Description " type = "text" class="form-control" required></textarea> 
+                    <div class="invalid-feedback">Mininmum 30 words required!</div>
+                             
+        </div>
+
+
+        <div class="mb-3">
+            <label for="image" class= "form-label">Upload listing Image</label>
+            <input name="image" placeholder="Enter Image url/link" type = "file" class="form-control" >
+                   <div class="invalid-feedback">Price should be valid!</div>
+                     
+        </div>
+
+
+        <div class="row">
+            <div class="mb-3 col-md-4 ">
+                <label for="price" class= "form-label">Price</label> 
+                <input name="price" placeholder="Enter Price"  class="form-control" required>
+                      <!-- Bootstrap class for validation => valid-feedback , invalid-feedback -->
+                      <div class="invalid-feedback">Price should be valid!</div>
+                    
+            </div>
+
+            <div class="mb-3 col-md-8">
+                <label for="country" class= "form-label">Country</label>
+                <input name="country" placeholder="Enter Country" type = "text" class="form-control" required>
+                       <div class="invalid-feedback">Country should be valid!</div>
+                     
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class= "form-label">Location</label>
+            <input name="location" placeholder="Enter Location" type = "text" class="form-control" required>
+                      <div class="invalid-feedback">Location should be valid!</div>
+                   
+        </div>
+
+        <button class="btn btn-dark add-btn mt-4">Add</button>
+    </form>
+</div>
+</div>
