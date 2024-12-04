@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home - Airbnb Clone</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Airbnb Clone</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="add-listing.html">Add New Listing</a></li>
+            <li><a href="edit-listing.html">Edit a Listing</a></li>
+        </ul>
+    </nav>
+    <div class="body-text">
+        <h1>Available Listings</h1>
+        <div id="listings" class="listings"></div>
+    </div>
+    <script>
+        // Fetch listings from the server
+        fetch('/api/listings')
+            .then(response => response.json())
+            .then(data => {
+                const listingsDiv = document.getElementById('listings');
+                data.forEach(listing => {
+                    const listingDiv = document.createElement('div');
+                    listingDiv.className = 'listing';
+                    listingDiv.innerHTML = `
+                        <h2>${listing.title}</h2>
+                        <p>Location: ${listing.location}</p>
+                        <button onclick="editListing(${listing.id})">Edit</button>
+                        <button onclick="deleteListing(${listing.id})">Delete</button>
+                        <button onclick="reviewListing(${listing.id})">Review</button>
+                        <button onclick="feedbackListing(${listing.id})">Feedback</button>
+                    `;
+                    listingsDiv.appendChild(listingDiv);
+                });
+            });
+
+        function editListing(id) {
+            alert(`Edit listing ${id}`);
+        }
+
+        function deleteListing(id) {
+            alert(`Delete listing ${id}`);
+        }
+
+        function reviewListing(id) {
+            alert(`Review listing ${id}`);
+        }
+
+        function feedbackListing(id) {
+            alert(`Feedback for listing ${id}`);
+        }
+    </script>
+</body>
+</html>
